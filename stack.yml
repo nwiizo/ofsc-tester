@@ -1,0 +1,16 @@
+provider:
+  name: faas
+  gateway: http://localhost:8080
+
+functions:
+  kubecon:
+    lang: python
+    handler: ./ofsc
+    image: alexellis/kubecon
+
+  bcrypt:
+    lang: go
+    handler: ./bcrypt
+    image: bcrypt
+    environment:
+      content_type: application/json
